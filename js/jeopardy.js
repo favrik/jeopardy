@@ -382,7 +382,7 @@ function resizeAnswerModal() {
     modalBodyObj.css('height',(totalModalHeight - modalBodyPadding)); // Adjust again for padding
 
     questionCenterPadding = ($('#question-modal-body').height() - ($('#question-image').height() + $('#question').height()))/2;
-    $('#question').css('padding-top', questionCenterPadding);
+    $('#question').css('padding-top', '100px');
 
 }
 
