@@ -150,11 +150,11 @@ $(function(){
 
             }
         });
-		//$('#question-modal').on('loaded.bs.modal', resizeAnswerModal());
-		$('#question-modal').on('shown.bs.modal', function (e) {
-		  resizeAnswerModal();
-		})
-        handleAnswer();
+      //$('#question-modal').on('loaded.bs.modal', resizeAnswerModal());
+      $('#question-modal').on('shown.bs.modal', function (e) {
+        resizeAnswerModal();
+      })
+      handleAnswer();
     });
     $('#score-adjust').click(function(){
         $('#score-adjust-modal').modal('show');
@@ -351,7 +351,7 @@ function loadBoard() {
       $.each(category.questions, function(n,question){
         // Questions
         column.append('<div class="well question unanswered text-center" data-question="' +
-          n + '">$' + question.value + '</div>');
+          n + '">' + addQuestionImage(question.value, i) + '</div>');
       });
     });
   }
@@ -363,6 +363,12 @@ function loadBoard() {
   var aspectRatioHeight = width * (9 / 16);
   var height = Math.max(textHeight, aspectRatioHeight);
   $('.category-title').height(height).width(width);
+}
+
+function addQuestionImage(value, column) {
+  var pic = column % 2 == 0 ? 2 : 1;
+  var name = value + '_' + pic + '.jpg';
+  return '<img src="images/' + name + '" height="130px">';
 }
 
 function resizeAnswerModal() {
@@ -379,7 +385,14 @@ function resizeAnswerModal() {
 
 }
 
+var leMusic = new Audio('./sounds/think_music.mp3');
+
 function handleAnswer(){
+    $('.question-text').unbind('click').click(function (e) {
+        e.stopPropagation();
+        leMusic.play();
+    });
+
     $('.score-button').unbind("click").click(function(e){
         e.stopPropagation();
         var buttonID = $(this).attr("id");
@@ -420,6 +433,8 @@ function handleAnswer(){
         var tile = $('div[data-category="' + $(this).data('category') + '"]>[data-question="' +
             $(this).data('question') + '"]')[0];
         $(tile).empty().append('&nbsp;<div class="clearfix"></div>').removeClass('unanswered').unbind().css('cursor','not-allowed');
+        leMusic.pause();
+        leMusic.currentTime = 0;
         $('#question-modal').modal('hide');
     });
 

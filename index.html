@@ -45,7 +45,7 @@
 
     <div class="panel-body" id="main-board"></div>
 
-    <div class="panel-footer">
+    <div class="panel-footer" style="display: none">
       <div class="col-md-4" id="player-1-score-div">
         <h4><span id="player-1-name">Red</span>: <span id="player-1-score">$0</span></h4>
       </div>
@@ -61,16 +61,16 @@
       <div class="clearfix"></div>
     </div>
 
-    <div class="panel-footer">
+    <div class="panel-footer" style="display: none">
 	    <div class="col-md-4">
-        	<button type="button" class="btn btn-info" id="score-adjust">Adjust Scores</button>
+        <!--<button type="button" class="btn btn-info" id="score-adjust">Adjust Scores</button>-->
 	    </div>
 	    <div class="col-md-4 text-center">
-        	<h4 id="control-info">Control: <span id="control-player"></span></h4>
+        	<h4 style="visibility: hidden" id="control-info">Control: <span id="control-player"></span></h4>
 	    </div>
 	    <div class="col-md-4">
         <!--<button type="button" class="btn btn-info pull-right" id="next-round">Go to next round</button>-->
-			<button type="button" class="btn btn-info pull-right" id="end-round">End Round</button>
+  			<!--<button type="button" class="btn btn-info pull-right" id="end-round">End Round</button>-->
 	    </div>
       <div class="clearfix"></div>
     </div>
@@ -100,7 +100,7 @@
           </div>
         </div><!-- /.answer -->
 
-        <div id="scoring-buttons" class="text-center modal-footer">
+        <div id="scoring-buttons" class="text-center modal-footer" style="display: none">
           <div class="score-button-group">
             <div class="col-md-4">
               <button type="button" class="btn btn-danger score-button" id="p1-wrong-button">
@@ -135,7 +135,7 @@
           </div>
         </div><!-- /.scoring-buttons -->
 
-        <div id="question-timer" class="text-center modal-footer">
+        <div id="question-timer" class="text-center modal-footer" style="display: none">
           <div id="timer-grid" class="text-center">
             <div class="timer-square timer-set-1"></div>
             <div class="timer-square timer-set-2"></div>
