@@ -45,7 +45,7 @@
 }
 
 .category-text {
-	font-size: 24px;
+	font-size: 20px;
 	font-family: Helvetica;
 	font-weight: bold;
 
@@ -154,7 +154,7 @@ body {
 
 .options {
   margin: 0 auto;
-  width: 50%;
+  width: 80%;
   text-align: left;
   list-style-type: lower-alpha;
 }
