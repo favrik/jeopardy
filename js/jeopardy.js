@@ -206,7 +206,7 @@ var score_player_1 = 0;
 var score_player_2 = 0;
 var score_player_3 = 0;
 var control = 1;
-var rounds = ['jeopardy', 'double-jeopardy', 'final-jeopardy'];
+var rounds = ['jeopardy'];
 var playerTranslation = {1: 'Red', 2: 'Blue', 3: 'Green'}
 var currentBoard;
 var currentRound = 0;
@@ -260,119 +260,109 @@ function adjustScores(){
 }
 
 function updateScore(){
-	var score_text = '';
-	score_player_1 < 0 ? score_text = '-$' + Math.abs(score_player_1).toString() : score_text = "$" + score_player_1.toString();
-	score_player_1 < 0 ? $('#player-1-score').css('color', 'red') : $('#player-1-score').css('color', 'white');
-    $('#player-1-score').empty().text(score_text);
+  var score_text = '';
+  score_player_1 < 0 ? score_text = '-$' + Math.abs(score_player_1).toString() : score_text = "$" + score_player_1.toString();
+  score_player_1 < 0 ? $('#player-1-score').css('color', 'red') : $('#player-1-score').css('color', 'white');
+  $('#player-1-score').empty().text(score_text);
 
-	score_player_2 < 0 ? score_text = '-$' + Math.abs(score_player_2).toString() : score_text = "$" + score_player_2.toString();
-	score_player_2 < 0 ? $('#player-2-score').css('color', 'red') : $('#player-2-score').css('color', 'white');
+  score_player_2 < 0 ? score_text = '-$' + Math.abs(score_player_2).toString() : score_text = "$" + score_player_2.toString();
+  score_player_2 < 0 ? $('#player-2-score').css('color', 'red') : $('#player-2-score').css('color', 'white');
     $('#player-2-score').empty().text(score_text);
 
-	score_player_3 < 0 ? score_text = '-$' + Math.abs(score_player_3).toString() : score_text = "$" + score_player_3.toString();
-	score_player_3 < 0 ? $('#player-3-score').css('color', 'red') : $('#player-3-score').css('color', 'white');
+  score_player_3 < 0 ? score_text = '-$' + Math.abs(score_player_3).toString() : score_text = "$" + score_player_3.toString();
+  score_player_3 < 0 ? $('#player-3-score').css('color', 'red') : $('#player-3-score').css('color', 'white');
     $('#player-3-score').empty().text(score_text);
 
-	$('#control-player').empty().text(playerTranslation[control]);
-    //$('#player-2-score').empty().text(score_player_2);
-    //$('#player-3-score').empty().text(score_player_3);
+  $('#control-player').empty().text(playerTranslation[control]);
 }
 
 function loadBoard() {
-    //function that turns the board.json (loaded in the the currentBoard variable) into a jeopardy board
-    var board = $('#main-board');
-    if (rounds[currentRound] === "final-jeopardy") {
-        finalQuestionImage = currentBoard['image'];
-        $('#end-round').hide();
-        $('#control-info').hide();
-        $('#main-board-categories').append('<div class="text-center col-md-6 col-md-offset-3"><h2 class="category-text">' +
-            currentBoard['category'] + '</h2></div>').css('background-color', 'navy');
-        finalImage = '<div id="final-image" class="text-center"></div>';
-        board.append('<div class="text-center col-md-6 col-md-offset-3"><h2><img src="./images/final_jeopardy.png" id="final-jeopardy-logo-img"></h2>'+
-        	finalImage + '<h2 id="final-jeopardy-question" class="question-text">' +
-            currentBoard['question'] + '</h2><button class="btn btn-primary" id="final-jeopardy-question-button">Show Question</button>' +
-            '<button class="btn btn-primary" id="final-jeopardy-music-button">30 Seconds, Good Luck</button>' +
-            '<button class="btn btn-primary" id="final-jeopardy-answer-button">Show Answer</button></div>').css('background-color', 'navy');
-        $('#final-jeopardy-question').hide();
-        $('#final-jeopardy-music-button').hide();
-        $('#final-jeopardy-answer-button').hide();
-        if (finalQuestionImage){
-            if (finalQuestionImage.startsWith("http")) {
-                srcPrefix = ''
-            }
-            else {
-                srcPrefix = './'
-            }
-           $('#final-image').empty().append("<img src=" + srcPrefix + finalQuestionImage + ">").hide();
-        }
-        else {
-            $('#final-image').empty().hide();
-        }
-        $('#wager-player-1-input').attr("placeholder", playerTranslation[1] + " Wager");
-        $('#wager-player-2-input').attr("placeholder", playerTranslation[2] + " Wager");
-        $('#wager-player-3-input').attr("placeholder", playerTranslation[3] + " Wager");
+  //function that turns the board.json (loaded in the the currentBoard variable) into a jeopardy board
+  var board = $('#main-board');
+  if (rounds[currentRound] === "final-jeopardy") {
+    finalQuestionImage = currentBoard['image'];
+    $('#end-round').hide();
+    $('#control-info').hide();
+    $('#main-board-categories').append('<div class="text-center col-md-6 col-md-offset-3"><h2 class="category-text">' +
+      currentBoard['category'] + '</h2></div>').css('background-color', 'navy');
+    finalImage = '<div id="final-image" class="text-center"></div>';
+    board.append('<div class="text-center col-md-6 col-md-offset-3"><h2><img src="./images/final_jeopardy.png" id="final-jeopardy-logo-img"></h2>'+
+      finalImage + '<h2 id="final-jeopardy-question" class="question-text">' +
+      currentBoard['question'] + '</h2><button class="btn btn-primary" id="final-jeopardy-question-button">Show Question</button>' +
+      '<button class="btn btn-primary" id="final-jeopardy-music-button">30 Seconds, Good Luck</button>' +
+      '<button class="btn btn-primary" id="final-jeopardy-answer-button">Show Answer</button></div>').css('background-color', 'navy');
+    $('#final-jeopardy-question').hide();
+    $('#final-jeopardy-music-button').hide();
+    $('#final-jeopardy-answer-button').hide();
+    if (finalQuestionImage){
+      if (finalQuestionImage.startsWith("http")) {
+        srcPrefix = ''
+      }
+      else {
+        srcPrefix = './'
+      }
+      $('#final-image').empty().append("<img src=" + srcPrefix + finalQuestionImage + ">").hide();
     }
     else {
-	    if (rounds[currentRound] === "double-jeopardy") {
-		    if (score_player_1 <= score_player_2 && score_player_1 <= score_player_3) {
-			    control = 1;
-		    }
-		    else if (score_player_2 <= score_player_3) {
-			    control = 2;
-		    }
-		    else {
-			    control = 3;
-		    }
-	    }
-        $('#control-player').empty().text(playerTranslation[control]);
-        $('#end-round').show();
-        board.css('background-color', 'black');
-        var columns = currentBoard.length;
-
-        // Floor of width/12, for Bootstrap column width appropriate for the number of categories
-        var column_width = parseInt(12/columns);
-        $.each(currentBoard, function(i,category){
-            // Category
-            var header_class = 'col-md-' + column_width;
-            if (i === 0 && columns % 2 != 0){ //if the number of columns is odd, offset the first one by one to center them
-                header_class += ' col-md-offset-1';
-            }
-            $('#main-board-categories').append('<div class="category ' + header_class
-                + '"><div class="text-center well"><div class="category-title category-text text-center">' + category.name
-                 + '</div></div><div class="clearfix"></div></div>').css('background-color', 'black');
-
-            // Column
-            var div_class = 'category col-md-' + column_width;
-            if (i === 0 && columns % 2 != 0){
-                div_class += ' col-md-offset-1';
-            }
-            board.append('<div class="' + div_class + '" id="cat-' +
-                i + '" data-category="' + i + '"></div>');
-            var column = $('#cat-'+i);
-
-            $.each(category.questions, function(n,question){
-                // Questions
-                column.append('<div class="well question unanswered text-center" data-question="' +
-                    n + '">$' + question.value + '</div>');
-            });
-        });
+      $('#final-image').empty().hide();
     }
-    $('#main-board-categories').append('<div class="clearfix"></div>');
-    var textHeight = Math.max.apply(null, ($('.category-title').map(function(){return $(this).height();})));
-    var width = Math.max.apply(null, ($('.category-title').map(function(){return $(this).parent().width();})));
-    // If possible to keep aspect ratio, switch to it.
-    //var aspectRatioHeight = width * .75;
-    var aspectRatioHeight = width * (9 / 16);
-    var height = Math.max(textHeight, aspectRatioHeight);
-    $('.category-title').height(height).width(width);
+    $('#wager-player-1-input').attr("placeholder", playerTranslation[1] + " Wager");
+    $('#wager-player-2-input').attr("placeholder", playerTranslation[2] + " Wager");
+    $('#wager-player-3-input').attr("placeholder", playerTranslation[3] + " Wager");
+  }
+  else {
+    if (rounds[currentRound] === "double-jeopardy") {
+      if (score_player_1 <= score_player_2 && score_player_1 <= score_player_3) {
+        control = 1;
+      }
+      else if (score_player_2 <= score_player_3) {
+        control = 2;
+      }
+      else {
+        control = 3;
+      }
+    }
+    $('#control-player').empty().text(playerTranslation[control]);
+    $('#end-round').show();
+    board.css('background-color', 'black');
+    var columns = currentBoard.length;
 
-    /*
-    var questionTextHeight = Math.max.apply(null, ($('.question').map(function(){return $(this).height();})));
-    var questionWidth = Math.max.apply(null, ($('.question').map(function(){return $(this).parent().width();})));
-    var questionAspectRatioHeight = questionWidth * (9/16);
-    var questionFinalHeight = Math.max(questionTextHeight, questionAspectRatioHeight);
-    $('.question').height(questionFinalHeight);
-    */
+    // Floor of width/12, for Bootstrap column width appropriate for the number of categories
+    var column_width = parseInt(12/columns);
+    $.each(currentBoard, function(i,category){
+      // Category
+      var header_class = 'col-md-' + column_width;
+      if (i === 0 && columns % 2 != 0){ //if the number of columns is odd, offset the first one by one to center them
+        header_class += ' col-md-offset-1';
+      }
+      $('#main-board-categories').append('<div class="category ' + header_class
+        + '"><div class="text-center well"><div class="category-title category-text text-center">' + category.name
+        + '</div></div><div class="clearfix"></div></div>').css('background-color', 'black');
+
+      // Column
+      var div_class = 'category col-md-' + column_width;
+      if (i === 0 && columns % 2 != 0){
+        div_class += ' col-md-offset-1';
+      }
+      board.append('<div class="' + div_class + '" id="cat-' +
+        i + '" data-category="' + i + '"></div>');
+      var column = $('#cat-'+i);
+
+      $.each(category.questions, function(n,question){
+        // Questions
+        column.append('<div class="well question unanswered text-center" data-question="' +
+          n + '">$' + question.value + '</div>');
+      });
+    });
+  }
+  $('#main-board-categories').append('<div class="clearfix"></div>');
+  var textHeight = Math.max.apply(null, ($('.category-title').map(function(){return $(this).height();})));
+  var width = Math.max.apply(null, ($('.category-title').map(function(){return $(this).parent().width();})));
+  // If possible to keep aspect ratio, switch to it.
+  //var aspectRatioHeight = width * .75;
+  var aspectRatioHeight = width * (9 / 16);
+  var height = Math.max(textHeight, aspectRatioHeight);
+  $('.category-title').height(height).width(width);
 }
 
 function resizeAnswerModal() {
