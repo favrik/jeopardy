@@ -91,7 +91,7 @@ $(function(){
         }
         else {
             // Candidate for refactoring.
-            $('#modal-answer-title').empty().text(currentBoard[category].name + ' - $' + value);
+            $('#modal-answer-title').empty().text(currentBoard[category].name);
             $('#question').empty().html(currentBoard[category].questions[question].question);
             if (questionImage){
                 if (questionImage.startsWith("http")) {
