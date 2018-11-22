@@ -151,3 +151,10 @@ body {
 #end-round {
 	margin-right: 10px;
 }
+
+.options {
+  margin: 0 auto;
+  width: 50%;
+  text-align: left;
+  list-style-type: lower-alpha;
+}

@@ -20,7 +20,7 @@
                 },
                 {
                     "value":400,
-                    "question":"Cuál de las siguientes estrategias no disminuye una BAP  ORGANIZATIVA:  a) La escuela cuenta con Ruta de Mejora b) Construir Rampas. c) Planta docente completa",
+                    "question":"Cuál de las siguientes estrategias no disminuye una BAP  <br /><b>ORGANIZATIVA:</b>  <br /><ul class='options'><li>La escuela cuenta con Ruta de Mejora</li><li>Construir Rampas. </li><li>Planta docente completa</li></ul>",
                     "answer": "Construir rampas."
                 }
             ]
@@ -45,7 +45,7 @@
                 },
                 {
                     "value":400,
-                   "question":"Cuál de las siguientes estrategias no disminuye una BAP ACTITUDINAL: a) No incluir a un alumno al equipo porque retrasará el trabajo. b) orientar a familia por crianza sobreprotectora c) Programa Chulying de DIF",
+                   "question":"Cuál de las siguientes estrategias no disminuye una BAP <br /><b>ACTITUDINAL:</b><br /> <ul class='options'><li>No incluir a un alumno al equipo porque retrasará el trabajo.</li><li>orientar a familia por crianza sobreprotectora</li><li>Programa Chulying de DIF</li></ul>",
                     "answer": "No incluir a un alumno al equipo porque retrasará el trabajo."
                 }
             ]
@@ -70,7 +70,7 @@
                 },
                 {
                     "value":400,
-                   "question":"Cuál de las siguientes estrategias no disminuye una BAP SOCIAL: a) Gestionar becas para alumnos de escasos recursos b) Enseñar “palabras mágicas ” para convivir c)organizar ferias de salud para la comunidad escolar.",
+                   "question":"Cuál de las siguientes estrategias no disminuye una BAP <br /><b>SOCIAL:</b><br /><ul class='options'><li>Gestionar becas para alumnos de escasos recursos</li><li>Enseñar “palabras mágicas ” para convivir</li><li>organizar ferias de salud para la comunidad escolar.</li></ul>",
                     "answer": "Enseñar “palabras mágicas ” para convivir"
                 }
             ]
@@ -95,7 +95,7 @@
                 },
                 {
                     "value":400,
-                   "question":"Cuál de las siguientes estrategias no disminuye una BAP FÍSICA: a) implementar canales en las banquetas para personas con Dis Vis b) uso de máquina Perkins en el salón. c)Remplazo de luces en salones para mayor iluminación.",
+                   "question":"Cuál de las siguientes estrategias no disminuye una BAP <br /><b>FÍSICA:</b><br /><ul class='options'><li>implementar canales en las banquetas para personas con Dis Vis</li><li>uso de máquina Perkins en el salón.</li><li>Remplazo de luces en salones para mayor iluminación.</li></ul>",
                     "answer": "uso de máquina Perkins en el salón."
                 }
             ]
@@ -120,7 +120,7 @@
                 },
                 {
                     "value":400,
-                   "question":"Cuál de las siguientes estrategias no disminuye una BAP METODOLÓGICA a) Uso de agenda visual de actividades. b) Programa de escuela a padres. c) los alumnos usan pintarrones individuales para responder.",
+                   "question":"Cuál de las siguientes estrategias no disminuye una BAP <br /><b>METODOLÓGICA</b><br /><ul class='options'><li>Uso de agenda visual de actividades.</li><li> Programa de escuela a padres.</li><li>los alumnos usan pintarrones individuales para responder.</li></ul>",
                     "answer": "Programa de escuela a padres."
                 }
             ]
@@ -145,7 +145,7 @@
                 },
                 {
                     "value":400,
-                   "question":"Cuál de las siguientes estrategias no disminuye una BAP BIOLÓGICA: a) Monitoreo del tratamiento médico del alumno. b) Conocer sobre TEA. c) Implementar club de lenguaje de señas mexicano (LSM) en la escuela.",
+                   "question":"Cuál de las siguientes estrategias no disminuye una BAP <br /><b>BIOLÓGICA:</b><br /><ul class='options'><li>Monitoreo del tratamiento médico del alumno.</li><li>Conocer sobre TEA.</li><li>Implementar club de lenguaje de señas mexicano (LSM) en la escuela.</li></ul>",
                     "answer": "Implementar club de lenguaje de señas mexicano (LSM) en la escuela."
                 }
             ]

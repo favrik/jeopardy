@@ -92,7 +92,7 @@ $(function(){
         else {
             // Candidate for refactoring.
             $('#modal-answer-title').empty().text(currentBoard[category].name + ' - $' + value);
-            $('#question').empty().text(currentBoard[category].questions[question].question);
+            $('#question').empty().html(currentBoard[category].questions[question].question);
             if (questionImage){
                 if (questionImage.startsWith("http")) {
                     srcPrefix = ''
@@ -126,7 +126,8 @@ $(function(){
             	&& Math.max(maxRoundWager, window[scoreVariable]) >= parseInt(inputDailyDoubleValue) ) {
 
                 value = parseInt(inputDailyDoubleValue);
-                $('#modal-answer-title').empty().text(currentBoard[category].name + ' - $' + value);
+                //$('#modal-answer-title').empty().text(currentBoard[category].name + ' - $' + value);
+                $('#modal-answer-title').empty().text(currentBoard[category].name);
                 $('#question-modal .score-button').data('value', value).data('question', question).data('category', category);
                 $('#daily-double-modal').modal('hide');
 
